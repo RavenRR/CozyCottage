@@ -5,7 +5,12 @@ class ClientsController < ApplicationController
     end
 
     def create
-
+        @client = current_user.clients.build(clients_params)
+        if @client.save
+            redirect_to clients_path
+        else
+            render :new
+        end
     end
 
     def index
@@ -13,7 +18,8 @@ class ClientsController < ApplicationController
     end
 
     def show 
-
+        @client = Client.find_by_id(params[:id])
+        redirect_to clients_path if !@client
     end
 
     def edit 
@@ -25,6 +31,7 @@ class ClientsController < ApplicationController
     end
 
     def destroy
+    
 
     end
 end
