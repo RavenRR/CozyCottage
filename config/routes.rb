@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'sessions#index'
+
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
 
   #logout route
   get 'logout' => 'sessions#destroy'
+
+  get '/auth/:provider/callback' => 'sessions#create'
   
   resources :categories
   resources :appointments
