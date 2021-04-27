@@ -5,7 +5,7 @@ class ClientsController < ApplicationController
     end
 
     def create
-        @client = current_user.clients.build(clients_params)
+        @client = current_user.clients.build(client_params)
         if @client.save
             redirect_to clients_path
         else
@@ -34,4 +34,8 @@ class ClientsController < ApplicationController
     
 
     end
+end
+private
+def client_params
+    params.require(:client).permit(:name, :image, :bio)
 end
