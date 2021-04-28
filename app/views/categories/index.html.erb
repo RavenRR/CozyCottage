@@ -1,0 +1,12 @@
+<ul>
+    <% @categories.each do |category| %>
+    <li>
+    <%= category.name %>
+    <ol>
+    <% category.clients.each do |client| %>
+    <%= link_to client_path(client) %>
+    <% end %>
+    </ol>
+    </li>
+    <% end %>
+    </ul>
