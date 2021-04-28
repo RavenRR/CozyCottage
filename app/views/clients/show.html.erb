@@ -1,0 +1,9 @@
+
+        <h1><%=@client.name%></h1>
+        <p><%=@client.bio%></p> 
+
+            <% if @client.image.attached? %>
+            <img src="<%=(url_for(@client.image))%>">
+            <% end %>
+            <p><%= button_to 'Delete Client', client_path(@client), :method => :delete %></p>
+        
