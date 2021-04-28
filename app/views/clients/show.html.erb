@@ -6,4 +6,5 @@
             <img src="<%=(url_for(@client.image))%>">
             <% end %>
             <p><%= button_to 'Delete Client', client_path(@client), :method => :delete %></p>
+            <p><%= link_to 'Edit Client', edit_client_path(@client)%></p>
         
