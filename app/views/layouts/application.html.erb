@@ -21,7 +21,12 @@
   <%= link_to "Signup", signup_path%>
   <%= link_to "Login", login_path%>
   <%end%>
+  </div>
   <div>
+  <% if flash[:message]%>
+      <%= flash{:message}%>
+  <% end %>
+  </div>
     <%= yield %>
   </body>
 </html>
