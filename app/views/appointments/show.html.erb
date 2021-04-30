@@ -1,0 +1,12 @@
+<h1><%= @appointment.title%></h1>
+<h1><%= @appointment.content%></h1>
+<h2><%= @appointment.completed%></h3>
+
+
+<% if @appointment.user == current_user%>
+<%= link_to "Edit Appointment", edit_appointment_path(@appointment)%>
+<%= button_to "Delete Appointment", appointment_path(@appointment), :method => :delete %>
+<% end %>
+
+<br>
+<h4> Return To Client Homepage: <%= link_to @appointment.client.name, client_path(@appointment.client_id) %></h4>

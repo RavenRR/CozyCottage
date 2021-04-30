@@ -1,0 +1,33 @@
+<br>
+<% if @appointment.client %>
+<h1> New Appointment For <%= @appointment.client.name %>:</h1>
+<% else %>
+<h1> New Appointment </h1>
+<% end %>
+
+<%= form_for([@appointment.client,@appointment]) do |f| %>
+
+    <% if !@appointment.client %>
+    <%= f.label :client %>
+    <%= f.collection_select :client_id, Client.all, :id, :name %>
+    <% else %>
+        <%= f.hidden_field :client_id %>
+        <% end %>
+    <br>
+    <br>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <br>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+    <br>
+    <br>
+    <%= f.label :completed %>
+    <%= f.date_field :completed %>
+
+
+
+    <%= f.submit "Submit" %>
+    
+    <% end %>
