@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-
+    before_action :redirect_if_not_logged_in
     def new
         @client = Client.new
     end
