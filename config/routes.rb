@@ -12,16 +12,16 @@ Rails.application.routes.draw do
   #logout route
   get 'logout' => 'sessions#destroy'
 
-  get '/auth/:provider/callback' => 'sessions#create'
+  get '/auth/:provider/callback' => 'sessions#omniauth'
   
-  resources :categories
+  resources :categories, only: [:index, :show]
   resources :appointments
   resources :users do 
     resources :clients, only: [:new, :create, :index]
   end
 
   resources :clients do
-    resources :appointments, only: [:new, :create, :index]
+    resources :appointments
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
