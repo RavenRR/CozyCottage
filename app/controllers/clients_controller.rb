@@ -1,7 +1,12 @@
 class ClientsController < ApplicationController
     before_action :redirect_if_not_logged_in
     def new
-        @client = Client.new
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+            @client = @user.clients.build
+        else 
+            @client = Client.new
+        end
+        @client.build_category
     end
 
     def create
@@ -14,7 +19,7 @@ class ClientsController < ApplicationController
     end
 
     def index
-        @clients = Client.all
+        @clients = Client.all.order_by_appointments
     end
 
     def show 
@@ -45,5 +50,5 @@ end
 end
 private
 def client_params
-    params.require(:client).permit(:name, :image, :bio)
+    params.require(:client).permit(:name, :image, :bio, :category_id, category_attributes: [:name])
 end
