@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
     has_many :clients
-    has_many :users, through: :clients
+
+    scope :filter_duplicates, -> { group(:name).having("count(*) >= 1")}
 end
