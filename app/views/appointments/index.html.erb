@@ -1,6 +1,6 @@
-<h1> All Appoinments </h1>
-
-            <ul>
-            <% @appointments.each do |t| %>
-            <li><a href="/appointments/<%= t.id %>"><%=t.title%><br><%= t.content %><br><%= t.completed %></a></li> 
-            <% end %>
+    <h1> All Appointments </h1>
+    <ul>
+    <% @appointments.each do |t| %>
+    <li><a href="/appointments/<%= t.id %>"><%= t.title %><br><%= t.completed %></a></li> 
+    <% end %>
+    </ul>
