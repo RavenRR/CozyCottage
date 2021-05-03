@@ -6,6 +6,7 @@ class User < ApplicationRecord
     has_many :client_appointments, through: :appointments, source: :client
 
     validates :username,:email, uniqueness: true, presence: true
+    validates :password, length: { in: 6..100 }
 
     def self.from_omniauth(response)
         User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|

@@ -5,7 +5,8 @@ class Client < ApplicationRecord
   has_many :appointments, dependent: :destroy
   has_many :users, through: :appointments
 
-  
+  validates :name, :bio, :image, presence: true
+
   scope :order_by_appointments, -> {left_joins(:appointments).group('clients.id').order('count(appointments.client_id) desc')}
 
   def self.filter(params)
