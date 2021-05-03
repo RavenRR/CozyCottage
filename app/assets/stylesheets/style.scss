@@ -1,0 +1,62 @@
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@454&display=swap');
+
+$white: white;
+$grey: grey;
+img {
+    border-radius: 50%;
+}
+.navbar {
+    margin-bottom: 0;
+    background: $grey;
+}
+body {
+    background: $white;
+    color: $black;
+    font-family: 'Merriweather', sans-serif;
+    text-align: center;
+}
+h1,
+h2 {
+    font-weight: bold;
+}
+p {
+    font-size: 16px;
+    color: $black;
+}
+a:visited {
+    color: $black;
+}
+.jumbotron {
+    background: #d1d4d8;
+    color: $black;
+    text-align: center;
+    p {
+            color: $black;
+            font-size: 26px;
+    }
+}
+.link {
+    color: $black;
+}
+.btn-primary {
+    color: $black;
+    border-color: $white;
+    margin-bottom: 5px;
+}
+.btn-sm {
+    background-color: $white;
+    display: inline-block;
+}
+img,
+video,
+audio {
+    margin-top: 20px;
+    max-width: 50%;
+}
+caption {
+
+    float: center;
+    clear: both;
+
+}

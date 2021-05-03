@@ -1,0 +1,35 @@
+<body>
+<div>
+<nav class="navbar navbar-dark navbar-static-top navbar-expand-md">
+    <div class="container">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+<div>
+<% if logged_in? %>
+    </button> <%= link_to "Cozy Cottage", user_path(current_user), class: 'navbar-brand' %>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav mr-auto">
+    <li class='nav-itmm'><%=link_to "New Appoinment", new_appointment_path, class: 'nav-link' %></li>
+    <li class='nav-item'><%=link_to "All Appointments", appointments_path, class: 'nav-link' %></li>
+    <li class='nav-item'><%=link_to "New Client", new_client_path, class: 'nav-link' %></li>  
+    <li class='nav-item'><%=link_to "All Clients", clients_path, class: 'nav-link' %></li>
+    <li class='nav-item'><%=link_to "All Tiers", categories_path, class: 'nav-link' %></li>
+    <li class='nav-item'><%=link_to "Log out", logout_path, method: "delete", class: 'nav-link' %></li>
+    <% else %>
+    </button> <%= link_to "Cozy Cottage", root_path, class: 'navbar-brand' %>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav mr-auto">
+    <li class='nav-item'><%=link_to "Sign up", signup_path, class: 'nav-link' %></li>
+    <li class='nav-item'><%=link_to "Log in", login_path, class: 'nav-link' %></li>
+    <% end %>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </nav>
+    <div>
+    <% if flash[:message] %>
+    <%= flash[:message] %>
+    <% end %>
+    </div>
+    </body>
+</html>
