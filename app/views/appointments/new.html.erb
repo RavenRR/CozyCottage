@@ -1,9 +1,13 @@
+<div class="jumbotron text-center">
+
 <br>
 <% if @appointment.client %>
 <h1> New Appointment For <%= @appointment.client.name %>:</h1>
 <% else %>
 <h1> New Appointment </h1>
 <% end %>
+</div>
+<%= render partial: "layouts/errors", locals: {object: @appointment} %>
 
 <%= form_for([@appointment.client,@appointment]) do |f| %>
 
@@ -20,10 +24,10 @@
     <br>
     <br>
     <%= f.label :content %>
-    <%= f.text_field :content %>
+    <%= f.text_area :content, size: "50x10"  %>
     <br>
     <br>
-    <%= f.label :completed %>
+    <%= f.label :date %>
     <%= f.date_field :completed %>
 
 

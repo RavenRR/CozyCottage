@@ -1,10 +1,28 @@
-
+<div class="container">
+        <div class="row">
+            <div class="col-lg-6">
         <h1><%=@client.name%></h1>
-        <p><%=@client.bio%></p> 
+        <h3> Tier: <%= @client.category.try(:name)%></h3>
+        
+        <img src="<%=(url_for(@client.image))%>" alt="Image" style="width:200px">
+    
+        <p><%= "Bio" %> : <%=@client.bio%></p> 
 
-            <% if @client.image.attached? %>
-            <img src="<%=(url_for(@client.image))%>">
+        
+            <% if @client.user == current_user%>
+            <p><%= link_to 'Edit Client', edit_client_path(@client),  :class => "btn btn-primary btn-sm"%></p>
+            <p><%= button_to 'Delete Client', client_path(@client), :method => :delete, :class => "btn btn-primary btn-sm" %></p>
             <% end %>
-            <p><%= button_to 'Delete Client', client_path(@client), :method => :delete %></p>
-            <p><%= link_to 'Edit Client', edit_client_path(@client)%></p>
+            <p><%= link_to 'All Appointments', client_appointments_path(@client), :class => "btn btn-primary btn-sm"%></p>
+            <p><%= link_to 'Add a new appointment', new_client_appointment_path(@client), :class => "btn btn-primary btn-sm"%></p>
+
+</div>
+    <div class="">
+            <h3>All <%= @client.name + "'s"%> Appointments:</h3>
+        <% @client.appointments.each do |c| %>
+        <li><strong><%= link_to c.title, client_appointment_path(@client, c) %></li>
+        <% end %>
+        </div>
+        </div>
+        
         

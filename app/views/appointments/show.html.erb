@@ -1,11 +1,13 @@
+<div class="jumbotron text-center">
 <h1><%= @appointment.title%></h1>
-<h1><%= @appointment.content%></h1>
-<h2><%= @appointment.completed%></h3>
+<p> Date: <%= @appointment.completed%></p>
+</div>
+<p><%= @appointment.content%></p>
 
 
 <% if @appointment.user == current_user%>
-<%= link_to "Edit Appointment", edit_appointment_path(@appointment)%>
-<%= button_to "Delete Appointment", appointment_path(@appointment), :method => :delete %>
+<%= link_to "Edit Appointment", edit_appointment_path(@appointment),  :class => "btn btn-primary btn-sm"%>
+<%= button_to "Delete Appointment", appointment_path(@appointment), :method => :delete,  :class => "btn btn-primary btn-sm"%>
 <% end %>
 
 <br>

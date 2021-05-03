@@ -1,6 +1,9 @@
+<div class="jumbotron">
+    <div class="container">
     <h1> All Appointments </h1>
-    <ul>
+    </div>
+</div>
+    
     <% @appointments.each do |t| %>
     <li><a href="/appointments/<%= t.id %>"><%= t.title %><br><%= t.completed %></a></li> 
     <% end %>
-    </ul>

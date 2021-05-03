@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@454&display=swap');
 
 $white: white;
-$grey: grey;
+$grey: rgb(77, 77, 77);
 img {
     border-radius: 50%;
 }
@@ -58,5 +58,18 @@ caption {
 
     float: center;
     clear: both;
+
+}
+.jumbotron1 {
+    color: $black;
+    text-align: center;
+    p {
+            color: $black;
+            font-size: 26px;
+    }
+}
+.image-cropper {
+    width: 200px;
+    height: 200px;;
 
 }

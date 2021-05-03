@@ -1,6 +1,8 @@
+<div class="jumbotron text-center">
+
 <h1> All Clients </h1>
         <p> Press on a client to view more information:<p>
-
+        </div>
         <% @clients.each do |client| %>
         <li><a href="/clients/<%= client.id %>"><%= client.name %></a></li> 
         <% end %>

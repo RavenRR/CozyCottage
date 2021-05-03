@@ -1,4 +1,10 @@
+<div class="jumbotron text-center">
+    
 <h1> New Client </h1>
+
+</div>
+
+<%= render partial: "layouts/errors", locals: {object: @client} %>
 
 <%= form_for(@client) do |f| %>
 
@@ -13,9 +19,31 @@
         <br>
 
     <%= f.label :bio %>
-    <%= f.text_field :bio %>
+    <%= f.text_area :bio, size: "50x10" %>
     <br>
         <br>
+    <%= f.label "Choose Category"%>
+    <div>
+    <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
+    </div>
+    <br>
+        <br>
+
+    <%= f.label "New Category"%>
+    <div>
+    <%= f.fields_for :category do |c|%>
+    <%= c.text_field :name %>
+    <datalist id="category_name">
+    <% Category.all.each do |m| %>
+    <option value = "<%= m.name %>"></option>
+    <% end %>
+    </datalist>
+    <% end %>
+    </div>
+    <br>
+    <br>
+    <br>
+
     <%= f.submit "Submit" %>
     
     <% end %>

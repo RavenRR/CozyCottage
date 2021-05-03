@@ -3,6 +3,8 @@
   <head>
     <title>CozyCottage</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title><%= content_for?(:title) ? yield(:title) : "CozyCottage" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "CozyCottage" %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,22 +13,12 @@
   </head>
 
   <body>
-  
-  <div>
-  <% if logged_in? %>
-  <%= link_to "All Clients", clients_path%>
-  <%= link_to "New Clients", new_client_path%>
-  <%= link_to "My Page", user_path(current_user)%>
-  <% else %>
-  <%= link_to "Signup", signup_path%>
-  <%= link_to "Login", login_path%>
-  <%end%>
-  </div>
-  <div>
-  <% if flash[:message]%>
-      <%= flash{:message}%>
-  <% end %>
-  </div>
-    <%= yield %>
+  <header>
+  <%= render 'layouts/navigation' %>
+  </header>
+    <main role="main">
+    <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
   </body>
 </html>
+

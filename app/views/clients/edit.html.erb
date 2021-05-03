@@ -1,5 +1,6 @@
 <h1> Edit Client </h1>
 
+<%= render partial: "layouts/errors", locals: {object: @client} %>
 <%= form_for(@client) do |f| %>
 
     <%= f.label :name %>
@@ -7,14 +8,18 @@
     <br>
     <br>
     <%= f.label :bio %>
-    <%= f.text_field :bio %>
+    <%= f.text_area :bio, size: "50x10" %>
     <br>
     <br>
 
     <%= f.label "Client's Image" %>
     <%= f.file_field :image %>
     <br>
-    <br>
+        <br>
+    <%= f.label "Choose Category"%>
+    <div>
+    <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
+    </div>
 
     <%= f.submit "Submit" %>
     

@@ -1,5 +1,5 @@
 <h1> Edit Appointment </h1>
-
+<%= render partial: "layouts/errors", locals: {object: @appointment} %>
 <%= form_for(@appointment) do |f| %>
 <br>
     <br>
@@ -8,7 +8,7 @@
 <br>
     <br>
 <%= f.label :content %>
-<%= f.text_field :content %>
+<%= f.text_area :content,size: "50x10"  %>
 <br> 
     <br>
 <%= f.label :completed %>

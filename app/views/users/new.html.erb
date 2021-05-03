@@ -1,6 +1,9 @@
-<h1> Signup <h1>
 
-<%= flash[:message] if flash[:message] %>
+    <div class="jumbotron text-center">
+<h2> Signup <h2>
+</div>
+
+<%= render partial: "layouts/errors", locals: {object: @user} %>
 <%= form_for(@user) do |f| %>
 
 <%= f.label :username %>
@@ -15,7 +18,8 @@
 <%= f.password_field :password %>
 <br>
     <br>
-<%= f.submit "Submit" %>
+<%= f.submit "Submit", :class => "btn btn-primary btn-sm" %>
 
-<%= link_to "back", root_path%>
+<%= link_to "Back", root_path, :class => "btn btn-primary btn-sm" %>
+</div>
 <% end %>

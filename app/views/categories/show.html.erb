@@ -1,10 +1,8 @@
-<ul>
-    <% @categories.each do |category| %>
-    <%= link_to category.name, category_path(category) %>
-    <ol>
-    <% category.clients.each do |client| %>
-    <%= link_to client_path(client) %>
-    <% end %>
-    </ol>
-    </li>
+<div class="jumbotron text-center">
+<h1><%="Tier " + @category.name %> - <%= pluralize(@category.clients.count, "clients")%></h1>
+
+</div>
+
+    <% @category.clients.each do |client| %>
+    <li><%= link_to client.name, client_path(client) %></li>
     <% end %>
