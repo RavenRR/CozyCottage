@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #logout route
   get 'logout' => 'sessions#destroy'
 
-  get '/auth/:provider/callback' => 'sessions#omniauth'
+  get '/auth/:provider/callback' => 'sessions#create'
   
   resources :categories, only: [:index, :show]
   resources :appointments
