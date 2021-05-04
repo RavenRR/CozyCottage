@@ -5,7 +5,7 @@
         <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
 <div>
 <% if logged_in? %>
-    </button> <%= link_to "Cozy Cottage", user_path(current_user), class: 'navbar-brand' %>
+    </button> <%= link_to "Coziest Cottage", user_path(current_user), class: 'navbar-brand' %>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav mr-auto">
     <li class='nav-itmm'><%=link_to "New Appoinment", new_appointment_path, class: 'nav-link' %></li>
@@ -15,7 +15,7 @@
     <li class='nav-item'><%=link_to "All Tiers", categories_path, class: 'nav-link' %></li>
     <li class='nav-item'><%=link_to "Log out", logout_path, method: "delete", class: 'nav-link' %></li>
     <% else %>
-    </button> <%= link_to "Cozy Cottage", root_path, class: 'navbar-brand' %>
+    </button> <%= link_to "Coziest Cottage", root_path, class: 'navbar-brand' %>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav mr-auto">
     <li class='nav-item'><%=link_to "Sign up", signup_path, class: 'nav-link' %></li>
