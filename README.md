@@ -1,24 +1,24 @@
-# README
+# The Coziest Cottage
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Coziest Cottage is a web application to allow home health care providers to keep track of their clients and their corresponding appointments. TCC is a new startup business, volunteering for this business has been an honor. 
 
-Things you may want to cover:
+![image](https://user-images.githubusercontent.com/69707980/117027255-c3de8700-acb9-11eb-9cbe-75536e844c7f.png)
 
-* Ruby version
 
-* System dependencies
+# instructions
+Clone this repo and run:
 
-* Configuration
+$ bundle install
+Create a database.
 
-* Database creation
+$ rails db:migrate
+You can run the server locally with the command below:
 
-* Database initialization
+$ rails s
+Open your browser and go to localhost:3000.
 
-* How to run the test suite
+# Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/romeroraven/CozyCottage. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# License
+The gem is available as open source under the terms of the MIT License.
