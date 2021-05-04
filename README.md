@@ -7,7 +7,7 @@ The Coziest Cottage is a web application to allow home health care providers to 
 
 # Instructions
 Clone this repo and run:
-1. Clone this repo to you local drive by running `git clone https://github.com/romeroraven/CoztCottage`, then cd into the cloned folder.
+1. Clone this repo to you local drive by running `git clone https://github.com/romeroraven/CozyCottage`, then cd into the cloned folder.
 
 2. Open folder using you preferred text editor, run $ bundle install in your terminal to install the gem dependencies. 
    Note: There may be cases where you will have to update the dependencies.
