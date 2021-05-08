@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
     before_action :redirect_if_not_logged_in
-    before_action :set_appointment, only: [:show, :edit, :update]
+    before_action :set_appointment, only: [:show, :edit, :update, :destroy]
     before_action :redirect_if_not_appointment_creator, only: [:edit, :update]
     def new
         if params[:client_id] && @client = Client.find_by_id(params[:client_id])
@@ -28,22 +28,18 @@ end
     end
 
     def edit
-        @appointment = Appointment.find_by_id(params[:id])
     end
 
     def update
-        @appointment = Appointment.find_by_id(params[:id])
         if @appointment.update(appointment_params)
             redirect_to appointment_path(@appointment)
         end
     end
 
     def show
-        @appointment = Appointment.find_by_id(params[:id])
     end
 
     def destroy
-        @appointment = Appointment.find_by_id(params[:id])
         @appointment.destroy
         
         redirect_to appointments_path
