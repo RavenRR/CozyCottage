@@ -9,29 +9,4 @@
 </div>
 <%= render partial: "layouts/errors", locals: {object: @appointment} %>
 
-<%= form_for([@appointment.client,@appointment]) do |f| %>
-
-    <% if !@appointment.client %>
-    <%= f.label :client %>
-    <%= f.collection_select :client_id, Client.all, :id, :name %>
-    <% else %>
-        <%= f.hidden_field :client_id %>
-        <% end %>
-    <br>
-    <br>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <br>
-    <br>
-    <%= f.label :content %>
-    <%= f.text_area :content, size: "50x10"  %>
-    <br>
-    <br>
-    <%= f.label :date %>
-    <%= f.date_field :completed %>
-
-
-
-    <%= f.submit "Submit" %>
-    
-    <% end %>
+<%= render partial: "appointments", locals: {appointments: @appointments} %>
