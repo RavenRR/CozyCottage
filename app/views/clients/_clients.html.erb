@@ -1,4 +1,41 @@
+<%= form_for(@client) do |f| %>
 
-<% @clients.each do |client| %>
-<li><a href="/clients/<%= client.id %>"><%= client.name %></a></li> 
-<% end %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+        <br>
+
+    <%= f.label "Client's Image" %>
+    <%= f.file_field :image %>
+    <br>
+        <br>
+
+    <%= f.label :bio %>
+    <%= f.text_area :bio, size: "50x10" %>
+    <br>
+        <br>
+    <%= f.label "Choose Category"%>
+    <div>
+    <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
+    </div>
+    <br>
+        <br>
+
+    <%= f.label "New Category"%>
+    <div>
+    <%= f.fields_for :category do |c|%>
+    <%= c.text_field :name %>
+    <datalist id="category_name">
+    <% Category.all.each do |m| %>
+    <option value = "<%= m.name %>"></option>
+    <% end %>
+    </datalist>
+    <% end %>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <%= f.submit "Submit" %>
+    
+    <% end %>
