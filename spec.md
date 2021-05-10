@@ -31,7 +31,7 @@ X Include login (how e.g. Devise)
  X Include form display of validation errors (form URL e.g. /recipes/new)
 Confirm:
 
- -(in progess) The application is pretty DRY
+ - The application is pretty DRY
  X Limited logic in controllers
  X Views use helper methods if appropriate
  X Views use partials if appropriate
