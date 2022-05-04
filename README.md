@@ -7,7 +7,7 @@ The Coziest Cottage is a web application to allow home health care providers to 
 
 # Instructions
 Clone this repo and run:
-1. Clone this repo to you local drive by running `git clone https://github.com/romeroraven/CozyCottage`, then cd into the cloned folder.
+1. Clone this repo to you local drive by running `git clone https://github.com/RavenRR/CozyCottage`, then cd into the cloned folder.
 
 2. Open folder using you preferred text editor, run $ bundle install in your terminal to install the gem dependencies. 
    Note: There may be cases where you will have to update the dependencies.
@@ -24,7 +24,7 @@ After checking out the repo, run bundle install to install dependencies. You may
 Bug reports and pull requests are welcome on GitHub at https://github.com/RavenRR/CozyCottage. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
 # License
-The gem is available as open source under the terms of the MIT License.
+The gem is available as open source under the terms of the [MIT License](https://github.com/RavenRR/CozyCottage/blob/d07595dd518e72df9da2927228b8b3535377dcdb/LICENSE).
 
 # Code of Conduct
 Everyone interacting in the The Coziest Cottage's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/RavenRR/CozyCottage/blob/main/CODE_OF_CONDUCT.md).
